@@ -14,7 +14,10 @@ export default function Home() {
           name="description"
           content="The official website of Green Lane Mosque"
         />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link
+          rel="icon"
+          href="https://img.icons8.com/fluency/48/null/mosque.png"
+        />
       </Head>
       <Navbar />
       <Hero />
