@@ -76,3 +76,625 @@
       }
     }
   }
+
+  .cal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .gradient-border {
+      --border-width: 6px;
+    
+      position: relative;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // width: 300px;
+      // height: 200px;
+      // font-family: Lato, sans-serif;
+      // font-size: 2.5rem;
+      // text-transform: uppercase;
+      // color: white;
+      // background: #222;
+      border-radius: var(--border-width);
+    
+      &::after {
+        position: absolute;
+        content: "";
+        top: calc(-1 * var(--border-width));
+        left: calc(-1 * var(--border-width));
+        z-index: -1;
+        width: calc(100% + var(--border-width) * 2);
+        height: calc(100% + var(--border-width) * 2);
+        background: linear-gradient(
+          60deg,
+          hsl(224, 85%, 66%),
+          hsl(269, 85%, 66%),
+          hsl(314, 85%, 66%),
+          hsl(359, 85%, 66%),
+          hsl(192, 85%, 66%),
+          hsl(89, 85%, 66%),
+          hsl(157, 85%, 66%),
+          hsl(207, 100%, 75%)
+        );
+        background-size: 300% 300%;
+        background-position: 0 50%;
+        border-radius: calc(2 * var(--border-width));
+        animation: moveGradient 4s alternate infinite;
+      }
+    }
+    
+    @keyframes moveGradient {
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    
+  }
+  .react-calendar {
+    max-width: 100%;
+    background: white;
+    border: 1px solid #a0a09663;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    padding: 2em;
+  }
+  .react-calendar--doubleView {
+    width: 700px;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+    margin: -0.5em;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+  }
+  .react-calendar,
+  .react-calendar *,
+  .react-calendar *:before,
+  .react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .react-calendar button {
+    margin: 0;
+    border: 0;
+    outline: none;
+  }
+  .react-calendar button:enabled:hover {
+    cursor: pointer;
+  }
+  .react-calendar__navigation {
+    display: flex;
+    height: 64px;
+    margin-bottom: 1em;
+  }
+  .react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+  }
+  .react-calendar__navigation button:disabled {
+    background-color: #f0f0f0;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+    padding: 0.5em;
+  }
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  .react-calendar__month-view__days__day--weekend {
+    color: #d10000;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #757575;
+  }
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+  }
+  .react-calendar__tile {
+    max-width: 100%;
+    padding: 10px 6.6667px;
+    background: none;
+    text-align: center;
+    line-height: 16px;
+  }
+  .react-calendar__tile:disabled {
+    background-color: #f0f0f0;
+  }
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  .react-calendar__tile--now {
+    background: #ffff76;
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background: #ffffa9;
+  }
+  .react-calendar__tile--hasActive {
+    background: #76baff;
+  }
+  .react-calendar__tile--hasActive:enabled:hover,
+  .react-calendar__tile--hasActive:enabled:focus {
+    background: #a9d4ff;
+  }
+  .react-calendar__tile--active {
+    background: #006edc;
+    color: white;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    background: #1087ff;
+  }
+  .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+  }
+  
+
+  .rainbow {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: auto;
+  
+    display: grid;
+    place-content: center;
+    text-align: center;
+  
+    font-size: 1.5em;
+  
+    --border-size: 0.3rem;
+    border: var(--border-size) solid transparent;
+  
+    /* Paint an image in the border */
+    border-image: conic-gradient(
+        from var(--angle),
+        #d53e33 0deg 90deg,
+        #fbb300 90deg 180deg,
+        #377af5 180deg 270deg,
+        #399953 270deg 360deg
+      )
+      1 stretch;
+    background: rgb(255 255 255 / var(--opacity));
+  }
+  
+  /** show a warning in browers that don't support it **/
+  .warning {
+    margin: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+  .warning p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /* Animate when Houdini is available */
+  @supports (background: paint(houdini)) {
+    @property --opacity {
+      syntax: "<number>";
+      initial-value: 0.5;
+      inherits: false;
+    }
+  
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+  
+    @keyframes opacityChange {
+      to {
+        --opacity: 1;
+      }
+    }
+  
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+  
+    .rainbow {
+      animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+    }
+  
+    /* Hide the warning */
+    .warning {
+      display: none;
+    }
+  }
+  $color1: #306D85;
+  $color2: #D93A54;
+
+  .sea {
+    // margin: 40px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    
+    .bubble {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: lighten($color1, 25%);
+        opacity: 0.9;
+        animation: bubble1-h-movement 1s ease-in infinite, bubble1-v-movement 300ms ease-in-out infinite alternate, bubble-scale-movement 300ms ease-in-out infinite alternate;
+        
+        &:after {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: lighten($color1, 25%);
+            opacity: 0.9;
+            
+        }
+        &:after {
+          top: -20;
+          left:100px;
+          width: 9px;
+          height: 9px;
+        }
+        
+
+    }
+    
+    .circle-wrapper {
+        position: relative;
+        background: linear-gradient(darken($color1, 3%), darken($color1, 12%));
+        width:300px;
+        height:300px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        z-index: 0;
+        border-radius:50%;
+        padding: 0 50px 0 50px;
+        border: 6px solid lighten($color1, 10%);
+        
+    }
+    
+    .submarine-wrapper {
+        height: 300px;
+        width: 300px;
+        padding: 30px 50px 30px 150px;
+        margin: 0 auto 0 auto;
+        animation: diving 3s ease-in-out infinite, diving-rotate 3s ease-in-out infinite;
+        
+       .submarine-body {
+           
+           width: 150px;
+           height: 80px;
+           position: absolute;
+           margin-top: 50px;
+           left: 25px;
+           background-color: $color2;
+           border-radius: 40px;
+           background: linear-gradient($color2, darken($color2, 10%));
+           
+           .light {
+                position:absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 40px 150px 40px;
+                border-color: transparent transparent lighten($color1,5%) transparent;
+               
+                transform: rotate(-50deg);
+               top:40px;
+               left:99%;
+               
+               &:after {
+                   content:"";
+                   position: absolute;
+                   width: 20px;
+                   height:13px;
+                   border-radius:5px;
+                   background-color:darken($color2, 5%);
+                   margin-left:-10px;
+               }
+
+           }
+           
+          //  .window {
+          //      position: absolute;
+          //      margin-top: 23px;
+          //      right: 18px;
+          //      background: linear-gradient(darken($color1, 13%), darken($color1, 18%));
+          //      border-radius: 20%;
+          //      border: 3px solid $color2;
+               
+          //       // &:after {
+          //       //   content: "";
+          //       //   position: absolute;
+          //       //   margin-top:3px;
+          //       //   margin-left:3px;
+          //       //   width: 25px;
+          //       //   height: 25px;
+          //       //   border-radius: 50%;
+          //       //   background-color: transparent;
+          //       //   opacity:0.8;
+          //       //   border-top:3px solid white;
+          //       //   transform:rotate(-45deg); 
+          //       // }
+          //  }
+           
+           .engine {
+               width: 30px;
+               height: 30px;
+               position: absolute;
+               margin-top: 32px;
+               left: 53px;
+               background-color: darken($color2, 10%);
+               border-radius: 50%;
+               border: 5px solid $color2;
+               
+               &:after, &:before {
+                  position: absolute;
+                  content: "";
+                  border-radius: 2px;
+                  background-color: white;
+                  animation:spin 900ms linear infinite;
+                  opacity:0.8;
+                }
+                &:after {
+                  top:8px;
+                  width: 20px;
+                  height: 4px;
+                  
+                }
+                &:before {
+                  left:8px;
+                  width: 4px;
+                  height: 20px;
+                  
+                }
+           }
+       }
+       
+        .helix {
+           width: 30px;
+           height: 70px;
+           position: absolute;
+           margin-top: 55px;
+           left:0;
+           background-color: $color2;
+           border-radius: 7px;
+           background: linear-gradient($color2, darken($color2, 10%));
+           
+            &:after {
+                content: "";
+                position: absolute;
+                margin-top:5px;
+                margin-left:7px;
+                width: 17px;
+                height: 60px;
+                border-radius: 3px;
+                background-color: transparent;
+                opacity:0.8;
+                background: linear-gradient(
+                  to bottom,
+                  $color2,
+                  $color2 50%,
+                  lighten($color2, 15%) 50%,
+                  lighten($color2, 15%)
+                );
+                background-size: 100% 20px;
+                animation:helix-movement 110ms linear infinite;
+
+            }
+        }
+        
+        
+        .hat {
+           width: 65px;
+           height: 25px;
+           position: absolute;
+           margin-top: 26px;
+           left:70px;
+           background-color: $color2;
+           border-radius: 10px 10px 0 0;
+           background: linear-gradient($color2, darken($color2, 3%));
+           
+            .periscope {
+                position: absolute;
+                width: 7px;
+                height: 20px;
+                background-color: $color2;
+                margin-top: -27px;
+                margin-left:32px;
+                border-radius:5px 5px 0 0;
+                
+                &:after, &:before {
+                    content: "";
+                    position: absolute;
+                    width: 15px;
+                    height: 7px;
+                    border-radius: 5px;
+                    background-color: $color2;
+                }
+            }
+            
+            .leds-wrapper {
+               width: 53px;
+               height: 13px;
+               position: relative;
+               top:7px;
+               left:7px;
+               background-color: $color2;
+               border-radius: 10px;
+               background: linear-gradient(darken($color2, 12%), darken($color2, 16%));
+                
+                .leds {
+                    position: absolute;
+                    margin-top:4px;
+                    margin-left:7px;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: white;
+                    animation:leds-off 500ms linear infinite;
+
+                    &:after, &:before {
+                        content: "";
+                        position: absolute;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: white;
+                    }
+                    &:after {
+                        margin-top:0px;
+                        margin-left:17px;
+                    }
+                    &:before {
+                        margin-top:0px;
+                        margin-left:34px;
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+
+@keyframes spin { 
+    100% { 
+        transform:rotate(360deg); 
+    } 
+}
+
+@keyframes leds-off { 
+    100% { 
+        opacity:0.3;
+    } 
+}
+
+@keyframes helix-movement {
+    100% {
+        background: linear-gradient(
+          to bottom,
+          lighten($color2, 15%) 50%,
+          lighten($color2, 15%),
+          $color2,
+          $color2 50%
+        );
+        background-size: 100% 20px;
+    }
+}
+
+
+@keyframes diving {
+  0% {
+         margin-top:5px;
+  }
+    50% {
+     margin-top:15px;
+  }
+    
+    100% {
+     margin-top:5px;
+  }
+}
+
+@keyframes diving-rotate {
+  0% {
+         transform:rotate(0deg); 
+  }
+    50% {
+         transform:rotate(3deg); 
+  }
+    75% {
+        transform:rotate(-2deg); 
+  }
+    100% {
+        transform:rotate(0deg); 
+  }
+}
+
+    @keyframes bubble1-h-movement {
+    0% { 
+          margin-left: 80%;
+      }
+    100% { 
+           margin-left: -100%; 
+      }
+  } 
+
+    @keyframes bubble2-h-movement {
+    0% { 
+          margin-left: 65%;
+      }
+    100% { 
+           margin-left: -5%; 
+      }
+  }
+
+  @keyframes bubble1-v-movement {
+    0% { 
+          margin-top: 115px; 
+      }
+    100% { 
+          margin-top:160px; 
+      }
+  }
+    
+    @keyframes bubble2-v-movement {
+    0% { 
+          margin-top: 115px; 
+      }
+    100% { 
+          margin-top:90px; 
+      }
+  }
+
+    @keyframes bubble-scale-movement {
+    0% { 
+          transform: scale(1.4);
+      }
+    100% { 
+          transform: scale(0.9);
+      }
+  }
+
+    @keyframes light-movement {
+    0% { 
+          transform: rotate(-40deg);
+      }
+      50% {
+          transform: rotate(-70deg);
+      }
+    100% { 
+          transform: rotate(-40deg);
+      }
+  }
