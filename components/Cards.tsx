@@ -17,7 +17,7 @@ export const Cards = () => {
 
       <article className="flex flex-wrap justify-center gap-5 mb-20">
         {cardsarray.map((title) => (
-          <Card title={title} />
+          <Card title={title} key={title} />
         ))}
       </article>
     </>

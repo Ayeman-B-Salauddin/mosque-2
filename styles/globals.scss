@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: url(cursor.png), auto;
+}
+
 .cards-list {
     width: 100%;
     display: flex;
@@ -11,8 +15,6 @@
     font-size: 16px;
   }
   }
-  
-  
   
   .card {
     margin: 2em 1em;
