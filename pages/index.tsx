@@ -3,6 +3,7 @@ import { Cards } from "../components/Cards";
 import { Footer } from "../components/Footer";
 import { Form } from "../components/Form";
 import { Hero } from "../components/Hero";
+import { MessengerApp } from "../components/Messenger";
 import { Navbar } from "../components/Navbar";
 import { Submarine } from "../components/Submarine";
 import { Time } from "../components/Time";
@@ -23,6 +24,7 @@ export default function Home() {
       <div className="dark:bg-slate-900">
         <Navbar />
         <Hero />
+        <MessengerApp />
         <Time />
         <Cards />
         <Form />
