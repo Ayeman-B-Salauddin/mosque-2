@@ -7,6 +7,8 @@ import { MessengerApp } from "../components/Messenger";
 import { Navbar } from "../components/Navbar";
 import { Submarine } from "../components/Submarine";
 import { Time } from "../components/Time";
+import { MessengerChat } from "react-messenger-chat-plugin";
+
 export default function Home() {
   return (
     <div>
@@ -24,7 +26,13 @@ export default function Home() {
       <div className="dark:bg-slate-900">
         <Navbar />
         <Hero />
-        <MessengerApp />
+        {/* <MessengerApp /> */}
+        <MessengerChat
+          pageId="1862102394024693"
+          themeColor={"#000000"}
+          loggedInGreeting="loggedInGreeting"
+          loggedOutGreeting="loggedOutGreeting"
+        />
         <Time />
         <Cards />
         <Form />

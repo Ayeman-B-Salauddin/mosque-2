@@ -112,10 +112,10 @@ export const MessengerApp = () => {
       </button>
 
       <MessengerChat
-        pageId="123456789101112"
-        themeColor={""}
-        loggedInGreeting={""}
-        loggedOutGreeting={""}
+        pageId="1862102394024693"
+        themeColor={"#000000"}
+        loggedInGreeting="loggedInGreeting"
+        loggedOutGreeting="loggedOutGreeting"
       />
     </div>
   );
