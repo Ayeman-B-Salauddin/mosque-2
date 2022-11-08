@@ -20,12 +20,14 @@ export default function Home() {
           href="https://img.icons8.com/fluency/48/null/mosque.png"
         />
       </Head>
-      <Navbar />
-      <Hero />
-      <Time />
-      <Cards />
-      <Form />
-      <Footer />
+      <div className="dark:bg-slate-900">
+        <Navbar />
+        <Hero />
+        <Time />
+        <Cards />
+        <Form />
+        <Footer />
+      </div>
     </div>
   );
 }
